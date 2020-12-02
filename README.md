@@ -66,11 +66,11 @@
 |-|-|
 |id 	|	(PK)
 |name |		(admin, subscriber, editor, author)
-------------------
-7. designations
-------------------
-- id
-- name
+
+|designations||
+|-|-|
+|id|
+|name|
 
 ## APIs - Spring Boot
 #### 1. user
