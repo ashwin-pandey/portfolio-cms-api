@@ -5,17 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.service.userRoleService;
-import antlr.collections.List;
+import com.portfolio.beans.UserRole;
+import com.portfolio.service.UserRoleService;
+import java.util.List;
 
 @RestController
-public class userRoleController {
+public class UserRoleController {
 	@Autowired
-	private userRoleService userRoleService;
+	private UserRoleService _userRoleService;
 	
 	@GetMapping
 	@ResponseBody
-	public List getAlluserRole() {
-		return userRoleService.getAll();
+	public List<UserRole> getAlluserRole() {
+		return _userRoleService.getAll();
 	}
 }

@@ -7,11 +7,11 @@ import antlr.collections.List;
 
 @Service
 
-public class designationsService {
+public class DesignationsService {
     @Autowired
-    private designationsService designationsService;
+    private DesignationsService _designationsService;
     
     public List getAll() {
-    	return designationsService.getAll();
+    	return _designationsService.getAll();
     }
 }

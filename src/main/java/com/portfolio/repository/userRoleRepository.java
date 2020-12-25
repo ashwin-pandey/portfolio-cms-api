@@ -4,13 +4,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import antlr.collections.List;
+import com.portfolio.beans.UserRole;
+
+import java.util.List;
 
 @Repository
-public interface userRoleRepository extends JpaRepository<userRoleRepository, String> {
+public interface UserRoleRepository extends JpaRepository<UserRole, Integer> {
 	
 	@Query(value = "FROM userRole")
-	List getAll();
+	List<UserRole> getAll();
 
 
 }

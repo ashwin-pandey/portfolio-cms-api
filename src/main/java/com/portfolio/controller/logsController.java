@@ -5,20 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.service.logsService;
+import com.portfolio.service.LogsService;
 
 import antlr.collections.List;
 
 @RestController
-public class logsController {
+public class LogsController {
 	@Autowired
-	private logsService logsService;
+	private LogsService _logsService;
 	
 	@GetMapping
 	@ResponseBody
 	public List getAlllogs() {
-		return logsService.getAll();
+		return _logsService.getAll();
 	}
-	
 	
 }

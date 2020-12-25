@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.service.designationsService;
+import com.portfolio.service.DesignationsService;
 
 import antlr.collections.List;
 
 @RestController
-public class designationsController {
+public class DesignationsController {
 	@Autowired
-	private designationsService designationsService;
+	private DesignationsService _designationsService;
 	
 	@GetMapping
 	@ResponseBody
 	public List getAlldesignations() {
-		return designationsService.getAll();
+		return _designationsService.getAll();
 	}
 }

@@ -5,19 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.service.skillsService;
+import com.portfolio.service.SkillsService;
 
 import antlr.collections.List;
 
 @RestController
-public class skillsController {
+public class SkillsController {
 	@Autowired
-	private skillsService skillsService;
+	private SkillsService _skillsService;
 	
 	@GetMapping(path = "/skills/all")
 	@ResponseBody
 	public List getAllskills() {
-		return skillsService.getAll();
+		return _skillsService.getAll();
 	}
 
 }

@@ -3,16 +3,17 @@ package com.portfolio.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.portfolio.beans.User;
 import com.portfolio.repository.UserRepository;
 
-import antlr.collections.List;
+import java.util.List;
 
 @Service
-public class userService {
+public class UserService {
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepository _userRepository;
 	
-	public List getAll() {
-		return userRepository.getAll();
+	public List<User> getAll() {
+		return _userRepository.getAll();
 	} 
 }

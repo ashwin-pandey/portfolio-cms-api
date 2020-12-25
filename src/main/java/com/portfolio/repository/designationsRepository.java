@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import antlr.collections.List;
 
 @Repository
-public interface designationsRepository extends JpaRepository<designationsRepository, String> {
+public interface DesignationsRepository extends JpaRepository<DesignationsRepository, String> {
 
 	@Query(value = "FROM designations")
 	List getrAll();

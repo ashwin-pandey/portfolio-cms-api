@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "designations")
 
-public class designations {
+public class Designations {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")

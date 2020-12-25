@@ -6,12 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import com.portfolio.beans.User;
 
-import antlr.collections.List;
+import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String>{
 	
 	@Query(value = "FROM User")
-	List getAll();
+	List<User> getAll();
 
 }

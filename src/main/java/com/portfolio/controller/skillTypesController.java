@@ -5,18 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.service.skillTypeService;
+import com.portfolio.beans.SkillType;
+import com.portfolio.service.SkillTypeService;
 
-import antlr.collections.List;
+import java.util.List;
 
 @RestController
-public class skillTypesController {
+public class SkillTypesController {
 	@Autowired
-	private skillTypeService skillTypeService;
+	private SkillTypeService _skillTypeService;
 	
 	@GetMapping
 	@ResponseBody
-	public List getAllskillType() {
-		return skillTypeService.getAll();
+	public List<SkillType> getAllskillType() {
+		return _skillTypeService.getAll();
 	}
 }

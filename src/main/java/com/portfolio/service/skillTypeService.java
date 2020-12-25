@@ -3,14 +3,17 @@ package com.portfolio.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import antlr.collections.List;
+import com.portfolio.repository.SkillTypeRepository;
+import com.portfolio.beans.SkillType;
+
+import java.util.List;
 
 @Service
-public class skillTypeService {
+public class SkillTypeService {
 	@Autowired
-	private skillTypeService skillTypeRepository;
+	private SkillTypeRepository _skillTypeRepository;
 	
-	public List getAll() {
-		return (List) skillTypeRepository.getAll();
+	public List<SkillType> getAll() {
+		return _skillTypeRepository.getAll();
 	}
 }
