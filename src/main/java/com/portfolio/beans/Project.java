@@ -125,6 +125,10 @@ public class Project {
 	public void setDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
+
+	public void setIsDeleted(boolean deleted) {
+		
+	}
 	
 	
 	

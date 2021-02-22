@@ -28,7 +28,7 @@ public class ProjectController {
 	 * This method is used to get all the projects.
 	 * @return Returns a list of projects.
 	 */
-	@GetMapping(path = "/project/all")
+	@GetMapping(path = "/project/all") 
 	@ResponseBody
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Project> getAllProject() {

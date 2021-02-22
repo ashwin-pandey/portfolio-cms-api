@@ -1,5 +1,6 @@
 package com.portfolio.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,13 +28,19 @@ public class ProjectService {
 	public Project addProject(Project project) {
 		return _projectRepository.save(project);
 	}
-	
+
 	public Project updateProject(Project newProject, int id) {
+		Date date=java.util.Calendar.getInstance().getTime();
+
 		return _projectRepository.findById(id)
 				.map(project -> {
 					project.setName(newProject.getName());
+					project.setDescription(newProject.getDescription());
+					project.setGithubLink(newProject.getGithubLink());
 					project.setProjectLink(newProject.getProjectLink());
 					project.setThumbnailLink(newProject.getThumbnailLink());
+					project.setIsDeleted(newProject.isDeleted());
+					project.setUpdatedDate(date);
 					return _projectRepository.save(project);
 				})
 				.orElseGet(() -> {
