@@ -1,6 +1,5 @@
 package com.portfolio.service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,18 +30,17 @@ public class SkillsService {
 		return null;
 	}
 
-	public Skills updateSkills(String skills, int id) {
+	public Skills updateSkills(Skills newSkills, int id) {
 		// TODO Auto-generated method stub
 	
 		
-		return _skillsRepository.findById(id);
+		return _skillsRepository.findById(id)
 				.map(skills -> {
 					skills.setName(newSkills.getName());
-					skills.setLogoLink(newSkills.getLogoLink());
-					skills.setIsDeleted(newSkills.isDeleted());
+//					skills.setLogoLink(newSkills.getLogoLink());
+//					skills.setIsDeleted(newSkills.isDeleted());
 					return _skillsRepository.save(skills);
 				})
-				
 				.orElseGet(() -> {
 					newSkills.setId(id);
 					return _skillsRepository.save(newSkills);
@@ -50,11 +48,6 @@ public class SkillsService {
 	}
 
 	
-
-	private Optional<Skills> map(Object object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 	

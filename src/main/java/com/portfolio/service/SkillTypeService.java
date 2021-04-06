@@ -1,11 +1,20 @@
 package com.portfolio.service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.portfolio.beans.SkillType;
+import com.portfolio.repository.SkillTypeRepository;
 
 import antlr.collections.List;
 
+@Service
 public class SkillTypeService {
-
+	
+	@Autowired
+	private SkillTypeRepository _skillTypeRepository;
 	public List getAll;
 
 	public Object getAll() {
@@ -20,15 +29,15 @@ public class SkillTypeService {
 		return null;
 	}
 
-	public SkillType updateSkillType(SkillType skillType, int id) {
-		return _skillTypeRepository.findById(id)
+	public SkillType updateSkillType(SkillType newSkillType, int id) {
 				return _skillTypeRepository.findById(id)
-						.map(project -> {
-							skillsType.setName(newSkillType.getName());
+						.map(skillType -> {
+							skillType.setName(newSkillType.getName());
+							return _skillTypeRepository.save(skillType);
 						})
 						.orElseGet(() -> {
-							newProject.setId(id);
-							return _projectRepository.save(newProject);
+							newSkillType.setId(id);
+							return _skillTypeRepository.save(newSkillType);
 						});
 	}
 

@@ -5,17 +5,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.portfolio.beans.Skills;
-import com.portfolio.beans.User;
 
 
 
 @Repository
 
-public interface SkillsRepository extends JpaRepository<User, String> {
+public interface SkillsRepository extends JpaRepository<Skills, Integer> {
 	@Query(value = "FROM Skills")
 	java.util.List<Skills> getAll();
 
 	void deleteById(int id);
 
-	Skills findById(int id);
 }

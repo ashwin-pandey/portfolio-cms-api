@@ -30,8 +30,8 @@ public class UserRolesController {
 	 @GetMapping(path = "/userRoles/{roles}")
 	 @ResponseBody
 	 @ResponseStatus(code = HttpStatus.OK)
-	 public String getUserRoles() {
-		 return (String) _userRolesService.getUserRoles();
+	 public UserRoles getUserRoles(int roles) {
+		 return  _userRolesService.getUserRoles(roles);
 	 }
 	 
 	 @PostMapping(path = "/userRoles")
@@ -41,11 +41,11 @@ public class UserRolesController {
 		 return _userRolesService.addUserRoles(userRoles);
 	 }
 	 
-	 @PutMapping(path = "/userRoles/roles")
+	 @PutMapping(path = "/userRoles/{roles}")
 	 @ResponseBody
 	 @ResponseStatus(code = HttpStatus.CREATED)
-	 public UserRoles updateUserRoles(@RequestBody UserRoles userRoles) {
-		 return _userRolesService.updateUserRoles(userRoles);
+	 public UserRoles updateUserRoles(@RequestBody UserRoles userRoles, int roles) {
+		 return _userRolesService.updateUserRoles(userRoles,roles);
 	 }
 	 
 	@DeleteMapping(path = "/userRoles/roles")

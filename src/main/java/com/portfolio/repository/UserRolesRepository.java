@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.portfolio.beans.UserRoles;
 
 @Repository
-public interface UserRolesRepository extends JpaRepository<UserRoles, String> {
+public interface UserRolesRepository extends JpaRepository<UserRoles, Integer> {
 	@Query(value ="FROM UserRoles" )
 	UserRoles getAll();
 }

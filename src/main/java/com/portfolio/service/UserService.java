@@ -15,7 +15,7 @@ public class UserService{
 	@Autowired
 	private UserRepository _userRepository;
 	
-	public List<User> getALL() {
+	public List<User> getAll() {
 		return _userRepository.getAll();
 	}
 	
@@ -28,18 +28,17 @@ public class UserService{
 		return _userRepository.save(user);
 	}
 	
-	public Optional<User> updateUser(User newUser, int id) {
+	public User updateUser(User newUser, int id) {
 		Date date = java.util.Calendar.getInstance().getTime();
-		return _userRepository.findById(id);
-		.map(User -> {
-			user.setPassword(newUser.getpassword());
-			user.setPhoneNumber(newUser.getPhoneNumber());
+		return _userRepository.findById(id)
+		.map(user -> {
+			user.setPassword(newUser.getPassword());
+			user.setPhone_Number(newUser.getPhone_Number());
 			user.setFirstName(newUser.getFirstName());
 			user.setLastName(newUser.getLastName());
-			user.serCountry(newUser.getCountry());
+			user.setCountry(newUser.getCountry());
 			user.setDescription(newUser.getDescription());
-			user.setDesignationId(newUser.getDesignationId());
-			user.setIsDeleted(newUser.getIsDeleted());
+//			user.setDesignation_Id(newUser.getDesignation_Id());
 			user.setUpdatedDate(date);
 			return _userRepository.save(user);
 			

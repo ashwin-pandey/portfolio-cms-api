@@ -1,8 +1,16 @@
 package com.portfolio.service;
 
 import com.portfolio.beans.UserRoles;
+import com.portfolio.repository.UserRolesRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserRolesService {
+	
+	@Autowired
+	private UserRolesRepository _userRolesRepository;
 
 	public String getAll() {
 		// TODO Auto-generated method stub
@@ -19,8 +27,9 @@ public class UserRolesService {
 		return null;
 	}
 
-	public UserRoles updateUserRoles(UserRoles userRoles) {
+	public UserRoles updateUserRoles(UserRoles newUserRoles, int id) {
 		// TODO Auto-generated method stub
+//		return _userRolesRepository.findById(id)
 		return _userRolesRepository.findById(id)
 				.map(userRoles -> {
 					userRoles.setName(newUserRoles.getName());
@@ -33,7 +42,7 @@ public class UserRolesService {
 				});
 	}
 
-	public void deleteUserRoles() {
+	public void deleteUserRoles(int id) {
 		// TODO Auto-generated method stub
 		_userRolesRepository.deleteById(id);
 		

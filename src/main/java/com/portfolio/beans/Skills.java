@@ -16,6 +16,11 @@ public class Skills {
 	@Column(name = "id")
 	private int id;
 	
+	
+
+	@Column(name = "name")
+	private String name;
+	
 	public int getId() {
 		return id;
 	}
@@ -32,20 +37,20 @@ public class Skills {
 		this.name = name;
 	}
 
-	public String getLogo_link() {
-		return logo_link;
+	public String getLogoLink() {
+		return logoLink;
 	}
 
-	public void setLogo_link(String logo_link) {
-		this.logo_link = logo_link;
+	public void setLogoLink(String logoLink) {
+		this.logoLink = logoLink;
 	}
 
-	public int getSkill_type_id() {
-		return skill_type_id;
+	public int getSkillTypeId() {
+		return skillTypeId;
 	}
 
-	public void setSkill_type_id(int skill_type_id) {
-		this.skill_type_id = skill_type_id;
+	public void setSkillTypeId(int skillTypeId) {
+		this.skillTypeId = skillTypeId;
 	}
 
 	public boolean isDeleted() {
@@ -56,14 +61,11 @@ public class Skills {
 		this.isDeleted = isDeleted;
 	}
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "logoLink")
+	private String logoLink;
 	
-	@Column(name = "logo_link")
-	private String logo_link;
-	
-	@Column(name = "skill_type_id")
-	private int skill_type_id;
+	@Column(name = "skillTypeId")
+	private int skillTypeId;
 	
 	@Column(name = "isDeleted")
 	private boolean isDeleted;

@@ -48,7 +48,7 @@ public class SkillsController {
 	@PutMapping(path = "/skills/{id}")
 	@ResponseBody
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Skills updateSkills (@RequestBody String skills, @PathVariable("id") int id) {
+	public Skills updateSkills (@RequestBody Skills skills, @PathVariable("id") int id) {
 		return _skillsService.updateSkills(skills, id);
 	}
 	

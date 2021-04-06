@@ -1,4 +1,6 @@
 package com.portfolio.beans;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -56,7 +58,7 @@ public class User {
 	private int creadtedDate;
 	
 	@Column(name = "updted_date")
-	private int updatedDate;
+	private Date updatedDate;
 	
 	@Column(name = "token")
 	private int token;
@@ -174,11 +176,11 @@ public class User {
 		this.creadtedDate = creadtedDate;
 	}
 
-	public int getUpdatedDate() {
+	public Date getUpdatedDate() {
 		return updatedDate;
 	}
 
-	public void setUpdatedDate(int updatedDate) {
+	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 
